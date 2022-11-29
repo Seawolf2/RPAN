@@ -21,16 +21,16 @@ Then, run the script with
 python downloadstreams.py [streamer's reddit username]
 ```
 
-For example, to download all of EddieEWI's streams, enter
+For example, to download all of yourusername's streams, enter
 
 ```
 pip install -r requirements.txt
-python downloadstreams.py EddieEWI
+python downloadstreams.py yourusername
 ```
 
 Mac users may need to replace python with python3 and pip with pip3, e.g.
 
 ```
 pip3 install -r requirements.txt
-python3 downloadstreams.py EddieEWI
+python3 downloadstreams.py yourusername
 ```
