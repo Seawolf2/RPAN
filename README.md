@@ -35,4 +35,4 @@ pip3 install -r requirements.txt
 python3 downloadstreams.py yourusername
 ```
 
-If you just wish to download comments on all of a user's streams, then use the donwloadcomments.py script instead. The downloadstreams.py script will download both streams and comments.
+If you just wish to download comments on all of a user's streams, then use the donwloadcomments.py script instead. The downloadstreams.py script will download both streams and comments. There's no need to run both.
