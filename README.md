@@ -34,3 +34,5 @@ Mac users may need to replace python with python3 and pip with pip3, e.g.
 pip3 install -r requirements.txt
 python3 downloadstreams.py yourusername
 ```
+
+If you just wish to download comments on all of a user's streams, then use the donwloadcomments.py script instead. The downloadstreams.py script will download both streams and comments.
