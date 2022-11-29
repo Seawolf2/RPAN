@@ -5,7 +5,7 @@ It relies on Reddit's PRAW API and the Python packages youtube-dl, pandas and PR
 
 To run the script, open your OS's command line interface (Terminal on Mac/Linux and Command Prompt on Windows) and navigate to the script in your OS's command line interface. This can be done on Mac and Linux with 
 
-'''
+```
 cd directory/where/downloadstreams.py/is/located
 ```
 
