@@ -3,7 +3,13 @@ This script lets you download all of a specified redditor's RPAN streams and the
 
 It relies on Reddit's PRAW API and the Python packages youtube-dl, pandas and PRAW.
 
-To run the script, navigate to the script in your OS's command line interface and install the required packages with
+To run the script, open your OS's command line interface (Terminal on Mac/Linux and Command Prompt on Windows) and navigate to the script in your OS's command line interface. This can be done on Mac and Linux with 
+
+'''
+cd directory/where/downloadstreams.py/is/located
+```
+
+Install the required packages with
 
 ```
 pip install -r requirements.txt
@@ -18,6 +24,7 @@ python downloadstreams.py [streamer's reddit username]
 For example, to download all of EddieEWI's streams, enter
 
 ```
+pip install -r requirements.txt
 python downloadstreams.py EddieEWI
 ```
 
