@@ -15,7 +15,10 @@ reddit = praw.Reddit(
 print('Reddit instance initialized')
     
 print('Initializing streamer instance...')
-streamer = reddit.redditor(str(sys.argv[1]))
+try:
+    streamer = reddit.redditor(str(sys.argv[1]))
+except:
+    streamer = input('Enter username: ')
 subs = streamer.submissions.new(limit=None)
 subs = iter(subs)
 print('Streamer instance initialized')
