@@ -112,6 +112,7 @@ def download_comments():
         created_utc = []
         author = []
         body = []
+        submission.comments.replace_more(limit=None)
         for comment in submission.comments.list():
             try:
                 created_utc.append(comment.created_utc)
