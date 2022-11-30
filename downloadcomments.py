@@ -20,6 +20,7 @@ try:
 except:
     username = input('Enter username: ')
     streamer = reddit.redditor(username)
+
 subs = streamer.submissions.new(limit=None)
 subs = iter(subs)
 print('Streamer instance initialized')
@@ -60,6 +61,15 @@ def create_dataframe():
     print('Dataframe ready')
 
     df.to_csv(streamer.name + '.csv', index=False)
+    
+    # Checking if a time window has been inputted
+    try:
+        start_time = float(sys.argv[2])
+        end_time = float(sys.argv[3])
+        df = df[df['created_utc'].between(start_time, end_time)]
+    except:
+        pass
+    
     return df
 
 df = create_dataframe()
@@ -93,7 +103,7 @@ def download_streams():
         except:
             pass
 
-#print('Beginning stream downloads...')
+#rint('Beginning stream downloads...')
 # Calling the download function three times because youtube-dl can fail to download streams the first time
 #download_streams()
 #download_streams()

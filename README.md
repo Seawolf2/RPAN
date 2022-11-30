@@ -35,4 +35,22 @@ pip3 install -r requirements.txt
 python3 downloadstreams.py yourusername
 ```
 
-If you just wish to download comments on all of a user's streams, then use the donwloadcomments.py script instead. The downloadstreams.py script will download both streams and comments. There's no need to run both.
+---
+
+If you just wish to download comments on all of a user's streams, then use the donwloadcomments.py script instead. The downloadstreams.py script will download both streams and comments. There's no need to run both. For example
+```
+python downloadcomments.py yourusername
+```
+will download all comments on all of yourusername's streams.
+
+---
+
+To select streams within a time window, you can specifiy a time window in UNIX time as follows
+```
+python downloadstreams.py [username] [start time] [end time]
+```
+
+For example,
+```
+python downloadstreams.py yourusername 1.391949e+09 1.671342e+09
+```
