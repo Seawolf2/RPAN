@@ -18,7 +18,8 @@ print('Initializing streamer instance...')
 try:
     streamer = reddit.redditor(str(sys.argv[1]))
 except:
-    streamer = input('Enter username: ')
+    username = input('Enter username: ')
+    streamer = reddit.redditor(username)
 subs = streamer.submissions.new(limit=None)
 subs = iter(subs)
 print('Streamer instance initialized')
