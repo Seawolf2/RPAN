@@ -3,6 +3,7 @@ This script lets you download all of a specified redditor's RPAN streams and the
 
 It relies on Reddit's PRAW API and the Python packages youtube-dl, pandas and PRAW.
 
+## Running the script
 To run the script, open your OS's command line interface (Terminal on Mac/Linux and Command Prompt on Windows) and navigate to the script in your OS's command line interface. This can be done on Mac and Linux with 
 
 ```
@@ -35,15 +36,16 @@ pip3 install -r requirements.txt
 python3 downloadstreams.py yourusername
 ```
 
----
+## Download comments only
 
-If you just wish to download comments on all of a user's streams, then use the donwloadcomments.py script instead. The downloadstreams.py script will download both streams and comments. There's no need to run both. For example
+If you only want to download comments, run the downloadcomments.py script, e.g.
+
 ```
 python downloadcomments.py yourusername
 ```
 will download all comments on all of yourusername's streams.
 
----
+## Download streams between between two dates
 
 To select streams within a time window, you can specifiy a time window in UNIX time as follows
 ```
