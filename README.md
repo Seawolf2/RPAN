@@ -54,7 +54,7 @@ python downloadstreams.py [username] [start time] [end time]
 
 For example,
 ```
-python downloadstreams.py yourusername 1609579511 1611342000
+python downloadstreams.py yourusername 1609579511 1669977683
 ```
 
-To convert date time to UNIX time, visit https://www.unixtimestamp.com. For example, Sat Jan 02 2021 09:25:11 GMT+0000 is 1609579511 in UNIX time and Fri Jan 22 2021 19:00:00 GMT+0000 is 1611342000.
+To convert date time to UNIX time, visit https://www.unixtimestamp.com. For example, Sat Jan 02 2021 09:25:11 UTC is 1609579511 in UNIX time and Fri Dec 02 2022 10:41:23 UTC is 1669977683.
