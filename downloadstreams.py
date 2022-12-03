@@ -55,7 +55,7 @@ def create_dataframe():
     df = pd.DataFrame(list(zip(title, author, subreddit, created_utc, id, url, permalink, num_comments, score, upvote_ratio)), columns=['title', 'author', 'subreddit', 'created_utc', 'id', 'url', 'permalink', 'num_comments', 'score', 'upvote_ratio'])
     df = df.astype({'author': 'string', 'id': 'string', 'title': 'string', 'url': 'string', 'subreddit': 'string'})
 
-    rpan_subreddits = ['AnimalsOnReddit', 'distantsocializing', 'GlamourSchool', 'HeadlineWorthy', 'lgbt', 'readwithme', 'RedditInTheKitchen', 'RedditMasterClasses', 'RedditSessions', 'RedditSets', 'redditsweats', 'shortcircuit', 'talentShow', 'TheArtistStudio', 'TheGamerLounge', 'TheYouShow', 'whereintheworld']
+    rpan_subreddits = ['AnimalsOnReddit', 'distantsocializing', 'GlamourSchool', 'HeadlineWorthy', 'lgbt', 'readwithme', 'RedditInTheKitchen', 'RedditMasterClasses', 'RedditSessions', 'RedditSets', 'redditsweats', 'shortcircuit', 'talentShow', 'TheArtistStudio', 'TheGamerLounge', 'TheYouShow', 'whereintheworld', 'GarageCrew']
     df = df[df['subreddit'].isin(rpan_subreddits)]
 
     print('Dataframe ready')
