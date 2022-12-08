@@ -119,7 +119,7 @@ def download_comments():
 
         # Checking if filename exceeds allowable limit imposed by macOS
         if len(video) > 254:
-            video = str(row['id'])
+            video = row['author'] + ' - ' + row['subreddit'] + ' ' + str(datetime.datetime.utcfromtimestamp(row['created_utc']).strftime("%m-%d-%Y %H%M%S")) + ' ' + row['id'] + '.csv'
         
         df1.to_csv(video, index=False)
 

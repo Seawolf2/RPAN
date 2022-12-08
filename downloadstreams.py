@@ -91,15 +91,15 @@ def download_streams():
     for index, row in df.iterrows():
         if row['id'] in downloaded:
                 continue
-    # video variable is the title of the video file we'll save
+        # video variable is the title of the video file we'll save
         video = row['title'] + ' - ' + row['author'] + ' - ' + row['subreddit'] + ' ' + str(datetime.datetime.utcfromtimestamp(row['created_utc']).strftime("%m-%d-%Y %H%M%S")) + ' ' + row['id'] + '.mp4'
-    # We remove slashes in order to avoid confusing filenames
+        # We remove slashes in order to avoid confusing filenames
         video = video.replace("\\", "")
         video = video.replace("/", "")
         
         # Checking if filename exceeds allowable limit imposed by macOS
         if len(video) > 254:
-            video = str(row['id'])
+            video = row['author'] + ' - ' + row['subreddit'] + ' ' + str(datetime.datetime.utcfromtimestamp(row['created_utc']).strftime("%m-%d-%Y %H%M%S")) + ' ' + row['id'] + '.mp4'
             
         try:
             ydl_opts = {'outtmpl': video}
@@ -151,7 +151,7 @@ def download_comments():
         
         # Checking if filename exceeds allowable limit imposed by macOS
         if len(video) > 254:
-            video = str(row['id'])
+            video = row['author'] + ' - ' + row['subreddit'] + ' ' + str(datetime.datetime.utcfromtimestamp(row['created_utc']).strftime("%m-%d-%Y %H%M%S")) + ' ' + row['id'] + '.csv'
     
         df1.to_csv(video, index=False)
 
