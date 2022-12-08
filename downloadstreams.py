@@ -96,6 +96,11 @@ def download_streams():
     # We remove slashes in order to avoid confusing filenames
         video = video.replace("\\", "")
         video = video.replace("/", "")
+        
+        # Checking if filename exceeds allowable limit imposed by macOS
+        if len(video) > 254:
+            video = str(row['id'])
+            
         try:
             ydl_opts = {'outtmpl': video}
             with youtube_dl.YoutubeDL(ydl_opts) as ydl:
@@ -143,6 +148,10 @@ def download_comments():
     # We remove slashes in order to avoid confusing filenames
         video = video.replace("\\", "")
         video = video.replace("/", "")
+        
+        # Checking if filename exceeds allowable limit imposed by macOS
+        if len(video) > 254:
+            video = str(row['id'])
     
         df1.to_csv(video, index=False)
 

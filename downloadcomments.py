@@ -83,33 +83,6 @@ if not CHECK_FOLDER:
 
 os.chdir(streamer.name)
 
-def download_streams():
-    downloaded = []
-    for i in os.listdir():
-        downloaded.append(i[-10:-4])
-
-    for index, row in df.iterrows():
-        if row['id'] in downloaded:
-                continue
-    # video variable is the title of the video file we'll save
-        video = row['title'] + ' - ' + row['author'] + ' - ' + row['subreddit'] + ' ' + str(datetime.datetime.utcfromtimestamp(row['created_utc']).strftime("%m-%d-%Y %H%M%S")) + ' ' + row['id'] + '.mp4'
-    # We remove slashes in order to avoid confusing filenames
-        video = video.replace("\\", "")
-        video = video.replace("/", "")
-        try:
-            ydl_opts = {'outtmpl': video}
-            with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-                ydl.download([row['url']])
-        except:
-            pass
-
-#rint('Beginning stream downloads...')
-# Calling the download function three times because youtube-dl can fail to download streams the first time
-#download_streams()
-#download_streams()
-#download_streams()
-#print('Finished stream downloads')
-
 CHECK_FOLDER = os.path.isdir('comments')
 
 # If folder doesn't exist, then create it.
@@ -143,7 +116,11 @@ def download_comments():
     # We remove slashes in order to avoid confusing filenames
         video = video.replace("\\", "")
         video = video.replace("/", "")
-    
+
+        # Checking if filename exceeds allowable limit imposed by macOS
+        if len(video) > 254:
+            video = str(row['id'])
+        
         df1.to_csv(video, index=False)
 
 download_comments()
